@@ -16,8 +16,11 @@
  */
 package org.apache.dubbo.demo;
 
-public interface DemoService {
+import javax.ws.rs.Path;
 
+@Path("/demoService")
+public interface DemoService {
+    @Path("/hello")
     String sayHello(String name);
 
 }

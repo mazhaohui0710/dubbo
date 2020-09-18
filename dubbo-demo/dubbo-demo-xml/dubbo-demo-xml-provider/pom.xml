@@ -109,6 +109,12 @@
             <artifactId>sentinel-parameter-flow-control</artifactId>
             <version>1.6.3</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.dubbo</groupId>
+            <artifactId>dubbo-rpc-rest</artifactId>
+            <version>${project.version}</version>
+            <optional>true</optional>
+        </dependency>
 
     </dependencies>
 </project>

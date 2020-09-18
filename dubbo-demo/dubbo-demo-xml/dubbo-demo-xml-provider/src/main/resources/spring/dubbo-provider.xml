@@ -23,12 +23,20 @@
 
     <dubbo:application name="demo-provider"/>
 
-    <dubbo:registry address="zookeeper://127.0.0.1:2181"/>
+    <dubbo:registry address="nacos://10.152.17.14:8848;10.152.17.1:8848;10.152.17.10:8848"/>
+    <dubbo:protocol id="dubbo" name="dubbo" port="20889" />
+    <dubbo:protocol id="rest" name="rest" port="30899" />
 
-    <dubbo:protocol name="dubbo"/>
+
+
+    <!--    <dubbo:protocol name="dubbo"/>-->
+  <!--  <dubbo:protocol name="rest" port="8080"/>-->
+
+
 
     <bean id="demoService" class="org.apache.dubbo.demo.provider.DemoServiceImpl"/>
 
-    <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService"/>
+    <dubbo:service interface="org.apache.dubbo.demo.DemoService" ref="demoService" protocol="rest,dubbo"/>
+
 
 </beans>
